@@ -10,11 +10,14 @@
   });
 
   $app->post("/generate", function() use ($app) {
-    $title = $_POST['title'];
+    $input = $_POST['input'];
     $newFoShizzer = new FoShizzer();
     $generated = $newFoShizzer->translate($input);
-    return $app['twig']->render('generate.twig', array('translation' => $input, 'generated' => $generated));
+
+    return $app['twig']->render('generate.twig',  array('input' => $input, 'generated' => $generated));
   });
+    //BAD!!!  array('translation' => $input, 'generated' => $generated));
+ // });
 
   return $app;
 ?>
