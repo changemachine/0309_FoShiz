@@ -2,33 +2,35 @@
 
     require_once "src/FoShizzerator.php";
 
-    class FoShizzeratorTest extends PHPUnit_Framework_TestCase
+    class FoShizzerTest extends PHPUnit_Framework_TestCase
     {
-        function test_FoShizzerator_oneWord()
+        function test_FoShizzer_1Word()
         {
             //Arrange
-            $test_FoShizzerator = new FoShizzerator;
+            $test_FoShizzer = new FoShizzer;
             $input = "Susan";
 
             //Act
-            $result = $test_FoShizzerator->translate($input);
+            $result = $test_FoShizzer->translate($input);
 
             //Assert
             $this->assertEquals("Suzan", $result);
+//PingPong: $this->assertEquals("ping", $result[3]);
+
 
         }
-
-/*        function test_makeTitleCase_multipleWords()
+/*
+        function test_FoShizzer_2Words()
         {
             //Arrange
-            $test_TitleCaseGenerator = new TitleCaseGenerator;
+            $test_FoShizzer = new FoShizzer;
             $input = "Susan is a gangsta!";
 
             //Act
-            $result = $test_TitleCaseGenerator->makeTitleCase($input);
+            $result = $test_FoShizzer->translate($input);
 
             //Assert
-            $this->assertEquals("The Little Mermaid", $result);
+            $this->assertEquals("Suzan iz a gangzta!", $result);
         }
 
         function test_makeTitleCase_mixedWords()

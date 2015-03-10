@@ -1,6 +1,6 @@
 <?php
   require_once __DIR__."/../vendor/autoload.php";
-  require_once __DIR__."/../src/TitleCaseGenerator.php";
+  require_once __DIR__."/../src/FoShizzerator.php";
 
   $app = new Silex\Application();
   $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __DIR__.'/../views'));
@@ -11,9 +11,9 @@
 
   $app->post("/generate", function() use ($app) {
     $title = $_POST['title'];
-    $newTitleCase = new TitleCaseGenerator();
-    $generated = $newTitleCase->makeTitleCase($title);
-    return $app['twig']->render('generate.twig', array('title' => $title, 'generated' => $generated));
+    $newFoShizzer = new FoShizzer();
+    $generated = $newFoShizzer->translate($input);
+    return $app['twig']->render('generate.twig', array('translation' => $input, 'generated' => $generated));
   });
 
   return $app;

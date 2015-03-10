@@ -1,39 +1,42 @@
 <?php
 
-    class FoShizzerator
-    {
-        //private $exceptions = [""];
+    class FoShizzer {
 
-/*
-explode sentences
-loop through each word of exploded array
-explode word
-loop through letters
-if not first letter OR capitalized
-{ convert s to z}
-*/
-        function translate($input)
-        {   //explode sentence
-            $exploded_sentence = explode(" ", $input);
-            // for ($i = 1; $i < count($exploded_sentence); $i++){ }
+        function translate($input) {
+            $words = explode(" ", $input);
+            foreach($words as $word){
+                $letters = str_split($word);
+                $letter_storage = array();
 
-            for ($i = 1; $i < count($exploded_sentence); $i++) {
-                $word = $exploded_sentence[$i];
-
-                for  ($i = 1; $i < count($word[]); $i++){
-                    $exploded_word[$i] = $word[$i];
-                    
+                foreach ($letters as $letter){
+                    if ($letter == "s") {
+                        array_push($letter_storage, "z");
+                    }
+                    else {
+                        array_push($letter_storage, $letter);
+                    }
+                    $string_output = implode($letter_storage);
                 }
-
-
-            if (in_array($exploded_sentence[$i], "s")) {
-                $exploded_sentence[$i] = "z");
-            }
             }
 
-            implode $exploded_sentence;
-            return $exploded_sentence;
+            return $string_output;
+
         }
+
     }
 
- ?>
+/*
+ACT
+SIMPLEST:  convert all esses (except first [or " s"])
+? process full sentence
+ skip if " s" or "S"
+loop through each word of exploded array
+CAN'T explode word
+loop through letters
+if not first letter OR capitalized
+    convert s to z
+*/
+
+
+
+?>
