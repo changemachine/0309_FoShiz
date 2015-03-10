@@ -4,22 +4,27 @@
 
         function translate($input) {
             $words = explode(" ", $input);
+            $wordz = array();
+
             foreach($words as $word){
                 $letters = str_split($word);
-                $letter_storage = array();
+                $letterz = array();
 
                 foreach ($letters as $letter){
                     if ($letter == "s") {
-                        array_push($letter_storage, "z");
+                        array_push($letterz, "z");
                     }
                     else {
-                        array_push($letter_storage, $letter);
+                        array_push($letterz, $letter);
                     }
-                    $string_output = implode($letter_storage);
+                    $string_letterz = implode($letterz);
                 }
+
+                array_push($wordz, $string_letterz);
             }
 
-            return $string_output;
+            $string_wordz = implode(" ", $wordz);
+            return $string_wordz;
 
         }
 

@@ -19,7 +19,7 @@
 
 
         }
-/*
+
         function test_FoShizzer_2Words()
         {
             //Arrange
@@ -33,7 +33,7 @@
             $this->assertEquals("Suzan iz a gangzta!", $result);
         }
 
-        function test_makeTitleCase_mixedWords()
+/*        function test_makeTitleCase_mixedWords()
         {
             //Arrange
             $test_TitleCaseGenerator = new TitleCaseGenerator;
