@@ -11,7 +11,9 @@
                 $letterz = array();
 
                 foreach ($letters as $letter){
-                    if ($letter == "s") {
+                    if ($letters[0] == "s") {
+                        array_push($letterz, $letter);
+                    }elseif ($letter == "s") {
                         array_push($letterz, "z");
                     }
                     else {
